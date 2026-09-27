@@ -1,0 +1,18 @@
+{
+  "url": "https://webook-nu.vercel.app/api/availability",
+  "measured_at": "2026-09-26 22:40:20 EDT",
+  "requests": 300,
+  "errors": 0,
+  "client_ms": {
+    "p50": 96.4,
+    "p95": 168.1,
+    "p99": 212.7,
+    "mean": 109.3,
+    "max": 310.7
+  },
+  "server_ms": {
+    "p50": 34.2,
+    "p95": 39.9,
+    "max": 83.3
+  }
+}

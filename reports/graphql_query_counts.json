@@ -1,0 +1,20 @@
+[
+  {
+    "bookings": 10,
+    "order_lines_per_booking": 2,
+    "with_loaders": 8,
+    "without_loaders": 82
+  },
+  {
+    "bookings": 50,
+    "order_lines_per_booking": 2,
+    "with_loaders": 8,
+    "without_loaders": 402
+  },
+  {
+    "bookings": 200,
+    "order_lines_per_booking": 2,
+    "with_loaders": 8,
+    "without_loaders": 1602
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "django",
+  "buildCommand": "cd frontend && npm ci && npm run build",
+  "functions": {
+    "webook/wsgi.py": {
+      "maxDuration": 30,
+      "excludeFiles": "{tests/**,docs/**,reports/**,scripts/**,frontend/node_modules/**,frontend/src/**,frontend/public/**,staticfiles/**}"
+    }
+  },
+  "crons": [{ "path": "/api/cron/reset-demo", "schedule": "0 8 * * *" }],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "DENY" }
+      ]
+    },
+    {
+      "source": "/static/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}

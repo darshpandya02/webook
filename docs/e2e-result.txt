@@ -1,0 +1,16 @@
+https://webook-nu.vercel.app 2026-09-26 22:39:30 EDT
+PASS GET / -> 200
+PASS GET /login -> 200
+PASS GET /api/health -> 200
+PASS GET /api/room-types -> 200
+PASS GET /api/docs -> 200
+PASS availability search renders room types (6 types)
+PASS guest books through the UI (booking #25: Booked: room 101 (Standard Double), Sat, Sep 26 to Mon, Sep 28, $258.00. Booking #25. View)
+PASS booking appears under My bookings
+PASS 8 parallel bookings for one room: exactly one 201 codes=[201, 409, 409, 409, 409, 409, 409, 409]
+PASS rejected attempt says why ({'error': 'conflict', 'detail': 'Room is already booked for these dates.'})
+PASS staff dashboard shows occupancy (37%)
+PASS staff checks the guest in
+PASS bill = rate x nights + room service (2 x 129.00 + 16.00 = 274.00; UI shows $274.00)
+PASS GraphQL availability matches REST (6 rows)
+PASS GraphQL nested bookings query (first: {'id': '27', 'status': 'cancelled', 'room': {'number': '101', 'roomType': {'name': 'Standard Double'}}, 'guest': {'username': 'guest'}, 'charges': {'total': '258.00'}})

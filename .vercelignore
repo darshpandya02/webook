@@ -1,0 +1,10 @@
+.venv
+.github
+.pytest_cache
+frontend/node_modules
+frontend/dist
+staticfiles
+docs
+reports
+tests
+*.md

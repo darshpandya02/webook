@@ -1,0 +1,24 @@
+[project]
+name = "webook"
+version = "1.0.0"
+description = "Hotel booking management: Django REST + GraphQL API over Postgres, React front end"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "django>=5.2,<6",
+    "djangorestframework>=3.15",
+    "djangorestframework-simplejwt>=5.3",
+    "graphene-django>=3.2",
+    "drf-spectacular>=0.28",
+    "psycopg[binary]>=3.2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-django>=4.9"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "webook.settings_test"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
